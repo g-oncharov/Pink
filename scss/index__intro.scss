@@ -1,0 +1,63 @@
+
+$blackblue: #1d2631;
+
+.intro {
+  position: relative;
+  background-image: url(../../img/intro-bg.jpg);
+  background-color: $blackblue;
+  background-size: contain, cover;
+  background-repeat: no-repeat;
+  padding-top: 66px;
+  color: #ffffff;
+    .container {
+      background-color: $blackblue;
+      width: 100%;
+      padding: 0 6.25%;
+      box-sizing: border-box;
+    }
+
+    a {
+      margin-top: 423px;
+    }
+}
+.system__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 74%;
+  margin: 0 auto;
+  padding-top: 32px;
+}
+
+.system__item {
+  width: 33.33%;
+   a {
+     font-size: 0;
+   }
+}
+
+.system__item--anroind {
+  img {
+    padding-left: 13px;
+    padding-top: 8px;
+  }
+}
+
+.system__item--windows {
+  img {
+    padding-left: 23px;
+    padding-top: 12px;
+  }
+}
+
+.intro__text {
+  text-align: center;
+  line-height: 26px;
+  font-weight: 300;
+  font-size: 14px;
+
+  width: 86%;
+  margin: 0 auto;
+  padding: 17px 2% 28px;
+  box-sizing: border-box;
+}
