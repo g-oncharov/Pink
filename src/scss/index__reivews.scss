@@ -1,0 +1,208 @@
+.reivews {
+  overflow: hidden;
+  padding-bottom: 112px;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-right: 100vw solid #f2f2f2;
+    border-top: 8vw solid transparent;
+    z-index: -1;
+  }
+}
+
+.slider input[type="radio"] {
+  display: none;
+}
+
+.slider-controls {
+  width: 70px;
+  position: absolute;
+  left: 6px;
+  right: 0;
+  bottom: 65px;
+  margin: 0 auto;
+}
+
+.slider-controls label {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #bec2c7;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.slider-controls label:hover {
+  background: #7e868f;
+}
+
+.slider-controls label:active {
+  background: #e9ebec;
+}
+
+.slider-controls label:not(:last-child) {
+  margin-right: 10px;
+}
+
+
+.slide {
+  display: none;
+  padding-top: 42px;
+    h3 {
+      font-size: 18px;
+      text-align: center;
+      margin: 0;
+      margin-bottom: 14px;
+    }
+
+    b {
+      display: none;
+    }
+
+    p {
+      font-size: 14px;
+      text-align: center;
+      padding: 0 6.25%;
+      line-height: 2.2em;
+      margin: 0;
+    }
+}
+#btn-1:checked ~ .slides .slide:nth-child(1) {
+  display: block;
+}
+
+#btn-2:checked ~ .slides .slide:nth-child(2) {
+  display: block;
+}
+
+#btn-3:checked ~ .slides .slide:nth-child(3) {
+  display: block;
+}
+#btn-1:checked ~ .slider-controls label[for="btn-1"],
+#btn-2:checked ~ .slider-controls label[for="btn-2"],
+#btn-3:checked ~ .slider-controls label[for="btn-3"] {
+  background: #ffffff;
+  border: 3px solid #283645;
+}
+
+@media(min-width: 660px) {
+  .reivews {
+    padding-bottom: 125px;
+
+    .slider-controls {
+      bottom: 71px;
+    }
+    .slide {
+      display: none;
+      flex-direction: column;
+      flex-wrap: wrap;
+        h3 {
+          font-size: 20px;
+          text-align: center;
+          margin: 0;
+          padding: 0;
+          margin-bottom: 9px;
+          order: 2;
+        }
+
+        b {
+          display: block;
+          font-size: 14px;
+          font-weight: 300;
+          text-align: center;
+          color: #283645;
+          order: 3;
+        }
+
+        p {
+          max-width: 900px;
+          margin: 0 auto;
+          margin-bottom: 35px;
+          padding: 0 3%;
+          font-size: 18px;
+          text-align: center;
+          line-height: 1.7em;
+          color: #283645;
+          order: 1;
+        }
+    }
+    #btn-1:checked ~ .slides .slide:nth-child(1) {
+      display: flex;
+    }
+
+    #btn-2:checked ~ .slides .slide:nth-child(2) {
+      display: flex;
+    }
+
+    #btn-3:checked ~ .slides .slide:nth-child(3) {
+      display: flex;
+    }
+  }
+}
+@media(min-width: 1200px) {
+  .reivews {
+    padding-bottom: 132px;
+
+  .slides {
+    padding-top: 185px;
+    background-image: url(../img/quotes.svg);
+    background-repeat: no-repeat;
+    background-position: center 72px;
+  }
+
+  .slide {
+    width: 940px;
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: relative;
+    h3 {
+      font-size: 24px;
+    }
+    b {
+      font-size: 18px;
+      font-weight: 400;
+    }
+    p {
+      margin: 0;
+      padding: 0 75px 35px;
+
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 6px;
+      top: 33px;
+      width: 27px;
+      height: 28px;
+      border: 2px solid #bec2c7;
+      border-right: 0;
+      border-bottom: 0;
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 6px;
+      top: 33px;
+      width: 27px;
+      height: 28px;
+      border: 2px solid #bec2c7;
+      border-left: 0;
+      border-bottom: 0;
+      transform: rotate(45deg);
+    }
+}
+
+.slider-controls {
+  display: none;
+}
+}
+}

@@ -1,0 +1,209 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Open Sans Light'), local('OpenSans-Light'),
+       url('../fonts/open-sans-v15-latin_cyrillic-300.woff2') format('woff2'),
+       url('../fonts/open-sans-v15-latin_cyrillic-300.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'),
+       url('../fonts/open-sans-v15-latin_cyrillic-400.woff2') format('woff2'),
+       url('../fonts/open-sans-v15-latin_cyrillic-400.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'),
+       url('../fonts/open-sans-v15-latin_cyrillic-700.woff2') format('woff2'),
+       url('../fonts/open-sans-v15-latin_cyrillic-700.woff') format('woff');
+}
+
+body {
+  font-family: "Open Sans", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+input,button,a {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 700;
+  line-height: 30px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 27px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a:visited {
+  color: inherit;
+}
+
+sup {
+  font-size: 22px;
+  padding-left: 8px;
+  line-height: 10px;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.d-none {
+  display: none !important;
+}
+.d-block {
+  display: block !important;
+}
+.d-flex {
+  display: flex !important;
+  flex-wrap: wrap !important;
+}
+
+.button {
+  display: block;
+
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  font-size: 18px;
+
+  padding: 15px 0;
+
+  border: 3px solid #ffffff;
+  border-radius: 35px;
+  background-color: transparent;
+  color: #ffffff;
+  outline: 0;
+  cursor: pointer;
+  transition: 0.5s;
+
+  &:hover {
+    background-color: #ffffff;
+    color: #d22856;
+  }
+
+  &:active {
+    color: #f1becc;
+  }
+}
+.button--rectangular {
+  display: block;
+  padding: 21px 47px 22px;
+  margin: 0 auto;
+  border: 0;
+  border-radius: 2px;
+
+  background-color: #2aab6d;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-align: center;
+  outline: 0;
+  transition: 0.5s;
+  cursor: pointer;
+  &:hover {
+    background-color: #1c9b5e;
+  }
+
+  &:active {
+    color: #61b98f;
+  }
+}
+
+.button--disabled {
+  color: #dddfe0;
+  border-color: #dddfe0;
+  background-color: transparent;
+  cursor: default;
+
+    &:hover {
+      background-color: transparent;
+      color: #dddfe0;
+      border-color: #dddfe0;
+    }
+}
+
+input {
+  box-shadow: none;
+}
+
+.input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 21px 19px 20px;
+    border: 2px solid #e5e5e5;
+    border-radius: 2px;
+    outline: 0;
+    transition: 0.5s;
+
+      &::placeholder {
+        font-size: 18px;
+        color: #283645;
+        opacity: 1;
+      }
+
+      &:hover {
+        border-color: #283645;
+      }
+
+    &:active,
+    &:focus {
+      border-color: #d22856;
+    }
+}
+.overflow-h {
+  overflow: hidden;
+}
+.container {
+  width: 87.5%;
+  margin: 0 auto;
+}

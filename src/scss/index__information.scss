@@ -1,0 +1,250 @@
+.information {
+  background-color: #f2f2f2;
+  background-image: url(../img/info-bg.png);
+  background-repeat: no-repeat;
+  background-position: bottom center;
+
+
+.information__block {
+  background-color: #ffffff;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-right: 100vw solid #f2f2f2;
+    border-top: 8vw solid transparent;
+    z-index: -1;
+  }
+}
+
+.information__text {
+  font-size: 24px;
+  text-align: center;
+  font-weight: 300;
+  width: 86%;
+  margin: 0 auto;
+  padding: 42px 0 62px;
+  br{
+    line-height: 30px;
+  }
+}
+
+.information__list {
+  padding-top: 50px;
+  padding-bottom: 287px;
+}
+
+.information__item {
+  margin-bottom: 30px;
+  h3 {
+    font-size: 18px;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 14px;
+    text-align: center;
+    margin: 0px;
+    line-height: 24px;
+  }
+}
+}
+@media(min-width: 660px) {
+
+.information {
+  background-image: none;
+  position: relative;
+
+.information__block {
+  background-color: #ffffff;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  }
+.information__text {
+  font-size: 40px;
+  text-align: center;
+  font-weight: 300;
+  width: 94%;
+  min-height: 235px;
+  padding: 0;
+  margin: 50px auto 100px;
+  margin-bottom: 0;
+  box-sizing: border-box;
+  br {
+    display: none;
+  }
+
+  span {
+    display: block;
+    width: 55%;
+    margin: 0 auto;
+    margin-top: 12px;
+    line-height: 1.2em;
+  }
+}
+
+.information__wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 3%;
+    bottom: 0;
+    width: 268px;
+    height: 481px;
+    background-image: url(../img/info-bg-tablet.png);
+    background-position: 3% bottom;
+    z-index: 2;
+  }
+}
+
+
+  .container {
+    width: 94%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+
+      &::before {
+        position: absolute;
+        left: -3%;
+        top: 0;
+        border-right: 100vw solid #ffffff;
+        border-top: 8vw solid transparent;
+        z-index: -1;
+      }
+
+      img {
+        display: block;
+        float: left;
+      }
+  }
+
+
+.information__list {
+    box-sizing: border-box;
+    min-height: 432px;
+    width: 50%;
+    margin-left: auto;
+    padding-top: 18px;
+    padding-bottom: 9px;
+}
+
+.information__item {
+  margin-bottom: 33px;
+    p {
+      text-align: left;
+    }
+    h3 {
+      text-align: left;
+    }
+}
+}
+}
+
+@media(min-width: 1200px) {
+.information {
+  padding-bottom: 10px;
+.information__text {
+  font-size: 50px;
+  width: 800px;
+  line-height: 0.8em;
+  margin-top: 76px;
+  margin-bottom: 106px;
+  color: #283645;
+}
+  .container {
+    width: 892px;
+    margin-top: -110px;
+  }
+
+
+.information__wrapper::after {
+  display: none;
+}
+
+.information__list {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.information__item  {
+  width: 253px;
+  z-index: 2;
+  padding-top: 372px;
+  h3 {
+    text-align: center;
+    font-size: 30px;
+    padding: 0 10px;
+
+    margin-bottom: 24px;
+  }
+  p {
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.7em;
+    padding-left: 4px;
+    padding-right: 6px;
+    margin: 0;
+  }
+
+  &:nth-child(1)::after {
+    content: "";
+    position: absolute;
+    left: -21px;
+    top: 14px;
+    width: 294px;
+    height: 310px;
+    background:
+    url(../img/info-bg-desktop1.png);
+    background-repeat: no-repeat;
+    z-index: 2;
+  }
+
+  &:nth-child(2)::after {
+    content: "";
+    position: absolute;
+    left: 299px;
+    top: 14px;
+    width: 294px;
+    height: 310px;
+    background:
+    url(../img/info-bg-desktop2.png);
+    background-repeat: no-repeat;
+    z-index: 2;
+  }
+
+  &:nth-child(3)::after {
+    content: "";
+    position: absolute;
+    right: -21px;
+    top: 15px;
+    width: 294px;
+    height: 310px;
+    background:
+    url(../img/info-bg-desktop3.png);
+    background-repeat: no-repeat;
+    z-index: 2;
+  }
+}
+}
+}
+
+@media (max-width:1199px) {
+  .information__item {
+    z-index: 2;
+  }
+}

@@ -1,0 +1,260 @@
+sourse spp:
+#include "Teacher.h"
+
+bool cmpByOccupancy(const Teacher& a, const Teacher& b)
+{
+	return ( a.getTeacherTime()) > ( b.getTeacherTime());
+}
+
+bool greater_4(const Teacher& a)
+{
+	return a.getTeacherPoint() > 4;
+}
+
+
+int getTeacher(int& a)
+{
+	return a;
+}
+int Avarage(int res, const Teacher& m)
+{
+	res += ( m.getTeacherPoint());
+	return res;
+}
+
+bool cmpTeacherByStreet(const Teacher& a, const Teacher& b)
+{
+	return a.getTeacherName() == b.getTeacherName();
+}
+int main()
+{
+	setlocale(LC_ALL, "rus");
+	int number;
+	ifstream fin("teachers.txt");
+	if (!fin)
+	{
+		cout << "файл не найден\n";
+		system("pause");
+		return 0;
+	}
+
+	vector<Teacher> teachers;
+	copy(istream_iterator<Teacher>(fin), istream_iterator<Teacher>(), back_inserter(teachers));
+
+	//2
+	cout << "Сортировка по фамилии: \n";
+	sort(teachers.begin(), teachers.end());
+	copy(teachers.begin(), teachers.end(), ostream_iterator<Teacher>(cout, "\n"));
+	cout << endl;
+	cout << "Сортирвка по количеству часов: \n";
+	sort(teachers.begin(), teachers.end(), cmpByOccupancy);
+	copy(teachers.begin(), teachers.end(), ostream_iterator<Teacher>(cout, "\n"));
+	cout << endl;
+
+	//3
+	cout << "Средний балл больше 4: \n";
+	vector<Teacher>::iterator it;
+	it = find_if(teachers.begin(), teachers.end(), greater_4);
+	vector<Teacher> teachers_greater_4;
+	copy(it, teachers.end(), back_inserter(teachers_greater_4));
+	copy(teachers_greater_4.begin(), teachers_greater_4.end(), ostream_iterator<Teacher>(cout, "\n"));
+
+	//4
+	cout << "Number of homes from vector ^: \n";
+	vector<int> teacherHomes;
+	for_each(teachers_greater_4.begin(), teachers_greater_4.end(), ClistHomes(teacherHomes));
+	vector<int> homes;
+	transform(teacherHomes.begin(), teacherHomes.end(), back_inserter(homes), getTeacher);
+	copy(homes.begin(), homes.end(), ostream_iterator<int>(cout, " "));
+	cout << endl;
+
+	//5
+	cout << "Поиск количества препдователей больше чем вы введете\n" << "Введите количество часов\n";
+	cin >> number;
+	int num_homes = count_if(homes.begin(), homes.end(), bind2nd(not2(less<int>()), number));
+	cout << "Count of homes = " << num_homes << endl;
+
+	//6 
+	double notEmptyRooms = accumulate(teachers.begin(), teachers.end(), 0, Avarage);
+	double averageOccupancy = (notEmptyRooms /=teachers.size());
+	cout << "averageOccupancy  = " << averageOccupancy  << endl;
+
+
+	//7
+	vector<Teacher>::iterator itsub;
+	itsub = search(teachers.begin(), teachers.end(), teachers_greater_4.begin(), teachers_greater_4.end(), cmpTeacherByStreet);
+
+	if (itsub != teachers.end())
+	{
+		cout << "Вектор из шага 3 найден: \n";
+		copy(itsub, teachers.end(), ostream_iterator<Teacher>(cout, "\n"));
+	}
+	else cout << "Вектор из шага 3 не найден!\n";
+
+	system("pause");
+	return 0;
+}
+Teacher.cpp:
+#include "Teacher.h"
+
+
+
+Teacher::Teacher(): secondName("Lubchenko"), lessonTime(54), middlePoint(5)
+{
+
+}
+
+Teacher::Teacher(const Teacher& obj)
+{
+	secondName = obj.secondName;
+	lessonTime = obj.lessonTime;
+	middlePoint = obj.middlePoint;
+}
+
+Teacher::Teacher(const string& _secondName, const int& lessontime, const int& middle_point)
+	: secondName(_secondName), lessonTime(lessontime), middlePoint(middle_point)
+{
+
+}
+
+Teacher::~Teacher()
+{
+}
+
+//Инструменты
+const string& Teacher::getTeacherName() const
+{
+	return this->secondName;
+}
+
+const int& Teacher::getTeacherTime() const
+{
+	return this->lessonTime;
+}
+
+
+const int& Teacher::getTeacherPoint() const
+{
+	return this->middlePoint;
+}
+
+//Функции
+void Teacher::setTeacherName(const string& _secondName)
+{
+	this->secondName = _secondName;
+}
+
+void Teacher::setTeacherTime(const int& lessontime)
+{
+	this->lessonTime = lessontime;
+}
+
+
+
+
+
+void Teacher::setTeacherPoint(const int& middle_point)
+{
+	this->middlePoint = middle_point;
+}
+
+//Операторы
+bool Teacher::operator<(const Teacher& obj2) const
+{
+	return (this->secondName < obj2.secondName);
+}
+
+Teacher::operator int() const
+{
+	return this->getTeacherTime();
+}
+
+ostream& operator<<(ostream& out, const Teacher& teacher)
+{
+	out << teacher.getTeacherName()
+		<< "\tВремя на предмет:" << teacher.getTeacherTime()
+		<< "\t Средний балл: " << teacher.getTeacherPoint();
+	return out;
+}
+
+istream& operator>>(istream& in, Teacher& teacher)
+{
+	
+
+	//Фамилия
+	string strTmp;
+	getline(in, strTmp, '$');
+	teacher.setTeacherName(strTmp);
+
+	//Время на предмет
+	getline(in, strTmp, '$');
+	int intHome = atoi(strTmp.c_str());
+	teacher.setTeacherTime(intHome);
+
+
+	//Средний балл
+	getline(in, strTmp);
+	int intEmptyRooms = atoi(strTmp.c_str());
+	teacher.setTeacherPoint(intEmptyRooms);
+
+	return in;
+}
+Teacher.h:
+#ifndef TEACHER_H
+#define TEACHER_H
+
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include<functional>
+#include <numeric>
+#include <iterator>
+#include <ctime>
+#include <vector>
+#include <fstream>
+#include <sstream>
+
+using namespace std;
+
+class Teacher
+{
+private:
+	string secondName;
+	int lessonTime;
+	int middlePoint;
+public:
+	//Консрукторы и деструктор
+	Teacher();
+	Teacher(const Teacher& obj);
+	Teacher(const string& _secondName, const int& lessontime, const int& middle_point);
+	~Teacher();
+
+	//Инструменты
+	const string& getTeacherName() const;
+	const int& getTeacherTime() const;
+	const int& getTeacherPoint() const;
+
+	//Функции
+	void setTeacherName(const string& _secondName);
+	void setTeacherTime(const int& lessontime);
+	void setTeacherPoint(const int& middle_point);
+	bool operator <(const Teacher& obj2) const;
+	operator int()const;
+};
+
+ostream& operator <<(ostream& out, const Teacher& teacher);
+istream& operator >>(istream& in, Teacher& teacher);
+
+
+class ClistHomes
+{
+	vector<int>& listTeachers;
+public:
+	ClistHomes(vector<int>& x) :listTeachers(x) {};
+	void operator ()(const Teacher& y)
+	{
+		listTeachers.push_back(y.getTeacherTime());
+	}
+};
+
+#endif 

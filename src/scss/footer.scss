@@ -1,0 +1,263 @@
+.main__footer {
+  display: none;
+}
+.inner-page {
+  .main__footer {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 35px 6.25%;
+  }
+
+  .company-block {
+      margin: 0 auto;
+     a {
+       position: relative;
+       display: block;
+       box-sizing: border-box;
+       color:inherit;
+     }
+  }
+
+  .social-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 63%;
+    max-width: 180px;
+    margin: 0 auto;
+    margin-top: 30px;
+
+    .icon {
+      display: block;
+      width: 51px;
+      height: 51px;
+      box-sizing: border-box;
+      border: 3px solid #e9ebec;
+      border-radius: 50%;
+      transition: 0.5s;
+
+      &:hover {
+        border-color: #283645;
+      }
+
+      &:active {
+        opacity: 0.3;
+        border-color: #e9ebec;
+      }
+    }
+    .icon--tw {
+    background-image: url("../img/twitter.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    }
+    .icon--fb {
+    background-image: url("../img/facebook.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    }
+    .icon--yt {
+    background-image: url("../img/youtube.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    }
+  }
+
+  .info-block {
+    width: 150px;
+    height: 70px;
+    margin: 0 auto;
+
+    background-image: url("../img/g-logo.svg");
+    background-repeat: no-repeat;
+    background-position: 100% 88%;
+    transition: 0.25s;
+
+    &:active {
+      opacity: 0.3;
+    }
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    h2 {
+      font-size: 14px;
+      display: block;
+      padding-top: 27px;
+      font-weight: 300;
+    }
+  }
+}
+@media(min-width: 660px) {
+  .main__footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 94%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 35px;
+    padding-bottom: 24px;
+  }
+
+  .company-block {
+    width: 33%;
+     a {
+       position: relative;
+     }
+  }
+
+  .social-block {
+    width: 28%;
+    max-width: 180px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
+    .icon {
+      display: block;
+      width: 51px;
+      height: 51px;
+      box-sizing: border-box;
+      border: 3px solid #e9ebec;
+      border-radius: 50%;
+      transition: 0.5s;
+
+      &:hover {
+        border-color: #283645;
+      }
+
+      &:active {
+        opacity: 0.3;
+        border-color: #e9ebec;
+      }
+    }
+    .icon--tw {
+    background-image: url("../img/twitter.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    }
+    .icon--fb {
+    background-image: url("../img/facebook.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    }
+    .icon--yt {
+    background-image: url("../img/youtube.png");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    }
+  }
+
+  .info-block {
+    width: 33%;
+    background-image: url("../img/g-logo.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    transition: 0.25s;
+    height: 40px;
+    margin-top: 3px;
+
+    &:active {
+      opacity: 0.3;
+    }
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+      color:inherit;
+    }
+  }
+
+.inner-page {
+  .main__footer {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 94%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+    padding-top: 35px;
+    padding-bottom: 24px;
+
+      .company-block {
+        margin: 0;
+        a {
+        color:inherit;
+        }
+      }
+
+      .social-block {
+        width: 28%;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        flex-direction: row;
+      }
+
+      .info-block {
+        width: 33%;
+        background-image: url(../img/g-logo.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 100% 100%;
+        transition: 0.25s;
+        height: 40px;
+        margin: 0;
+        margin-top: 3px;
+      }
+  }
+}
+}
+@media(min-width: 1200px) {
+  .main__footer {
+    width: 940px;
+
+
+  .company-block {
+     a {
+       width: 150px;
+     }
+  }
+
+  .social-block {
+    width: 180px;
+  }
+
+  .info-block {
+    box-sizing: border-box;
+    padding-left: 82px;
+    background-position: 100% 0;
+
+    h2 {
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+}
+  .inner-page {
+    .main__footer {
+      padding: 0;
+      width: 940px;
+      padding-top: 35px;
+      padding-bottom: 24px;
+      .social-block {
+        width: 180px;
+      }
+    }
+  }
+
+}

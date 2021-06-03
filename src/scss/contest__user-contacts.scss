@@ -1,0 +1,150 @@
+.user-contacts {
+  padding: 0 6.25%;
+  padding-top: 40px;
+  legend {
+    display: none;
+  }
+}
+
+.user-contacts__fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+   label {
+     display: block;
+     margin: 0 auto;
+     margin-bottom: 10px;
+
+     text-transform: uppercase;
+     font-size: 14px;
+     color: #d22856;
+   }
+
+   .input {
+     margin-bottom: 25px;
+   }
+}
+@media(min-width: 660px) {
+  .user-contacts {
+    order: 3;
+    padding: 0 3%;
+
+    legend {
+      display: block;
+      margin: 0 auto;
+      width: 39%;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 14px;
+      color: #d22856;
+    }
+  }
+
+  .user-contacts__fieldset {
+    max-width: 936px;
+    margin: 0 auto;
+    border: 2px solid #e5e5e5;
+    border-radius: 2px;
+    margin-top: 56px;
+    min-height: 314px;
+
+    label {
+      position: relative;
+      top: 119px;
+    }
+
+    .input {
+    display: block;
+    margin: 0 auto;
+    margin-top: 23px;
+    margin-bottom: 30px;
+    width: 100%;
+    box-shadow: inset -60px 0px #e5e5e5;
+    position: relative;
+    }
+  }
+
+  .telephone-block,
+  .address-block {
+    display: block;
+    width: 81%;
+    margin: 0 auto;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      right: 22px;
+      top: 61px;
+      width: 20px;
+      height: 19px;
+      background-position: 0 0;
+      background-repeat: no-repeat;
+    }
+}
+
+  .telephone-block {
+    &::after {
+      background-image: url("../img/icon-phone.svg");
+      background-size: 20px 19px;
+    }
+}
+
+.address-block {
+  &::after {
+    background-image: url("../img/icon-mail.svg");
+    background-size: 20px 19px;
+  }
+
+  }
+
+}
+
+@media(min-width: 1200px) {
+  .user-contacts {
+    width: 100%;
+    margin: 0;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 0;
+
+    form {
+      width: 962px;
+      margin: 0 auto;
+    }
+
+    legend {
+      width: 260px;
+    }
+
+    label {
+      top: 115px;
+    }
+  }
+  .user-contacts__fieldset {
+    box-sizing: border-box;
+    width: 939px;
+    max-width: 100%;
+    min-height: 169px;
+    padding: 0 58px;
+    margin: 0 auto;
+
+      .input {
+        margin-top: 19px;
+      }
+  }
+
+  .telephone-block,
+  .address-block {
+    width: 374px;
+    &::after {
+    top: 57px;
+    }
+}
+  .telephone-block {
+    float: left;
+  }
+
+  .address-block {
+    float: right;
+  }
+}

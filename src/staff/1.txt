@@ -1,0 +1,12 @@
+9. Js валидация форм +
+10. акксесабилити +\-
+6. Модальные окна +
+8. Стили форм +
+9. Защита +
+1212. функция лайков в кабинете. +
+11. лента +
+1. Карта универа +
+2. Ховер эфекты +
+4. Ты еще не с нами? Регистрируйся! +
+5. SELECT `posts`.`id` as post_id , `users`.`id` as user_id , `login`, `img`, `description`, `type` as img_type , `status` as user_status FROM `posts` INNER JOIN `users` ON `posts`.user_id = `users`.`id` +
+7. Лайки +

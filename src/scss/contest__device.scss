@@ -1,0 +1,137 @@
+.device {
+  padding: 0 6.25%;
+  padding-top: 38px;
+  background-color: #f2f2f2;
+  fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  legend {
+    width: 240px;
+    margin: 0 auto;
+    margin-bottom: 35px;
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #d22856;
+    line-height: 18px;
+  }
+}
+
+.device__list {
+  margin: 0 auto;
+  width: 280px;
+}
+
+.filters__option {
+  padding-left: 69px;
+  margin-bottom: 37px;
+  position: relative;
+  user-select: none;
+    label {
+      font-size: 18px;
+      line-height: 38px;
+      cursor: pointer;
+    }
+}
+
+.filters__input--radio + label::before {
+  content: "";
+  position: absolute;
+  top: 48%;
+  margin-top: -18px;
+  left: 0;
+  width: 35px;
+  height: 35px;
+  border: 2px solid #e5e5e5;
+  border-radius: 50%;
+  background-color: #fff;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.filters__input--radio + label:hover::before,
+.filters__input--radio + label:focus::before {
+  border-color: #283645;
+}
+
+.filters__input--radio + label:active::before {
+  border-color: #d22856;
+  box-shadow: inset 0 0 0 10px #ffffff, inset 0 0 0 18px #d22856;
+}
+
+.filters__input--radio:checked + label::before {
+  content: "";
+  border-color: #e5e5e5;
+  box-shadow: inset 0 0 0 10px #ffffff, inset 0 0 0 18px #d22856;
+}
+
+.filters__input--radio:checked + label:hover::before {
+  border-color: #283645;
+}
+
+.filters__input--radio:checked + label:active::before {
+  border-color: #d22856;
+  box-shadow: none;
+}
+
+@media(min-width: 660px) {
+  .device {
+    order: 2;
+    padding: 0 3%;
+    background-color: #ffffff;
+
+
+  fieldset {
+    max-width: 936px;
+    margin: 0 auto;
+    border: 2px solid #e5e5e5;
+    border-radius: 2px;
+    margin-top: 32px;
+  }
+
+  legend {
+    width: 60%;
+    padding-top: 0px;
+  }
+}
+
+.device__list {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 9.5%;
+  padding-bottom: 35px;
+}
+
+.filters__option {
+  padding-left: 60px;
+}
+
+.filters__option:last-child {
+  margin-bottom: 0;
+}
+}
+
+@media(min-width: 1200px) {
+  .device {
+    padding: 0;
+    width: 470px;
+    margin-right: auto;
+
+    fieldset {
+      width: 431px;
+      margin-left: 21px;
+      margin-top: 29px;
+    }
+
+    legend {
+      width: 375px;
+    }
+}
+
+.device__list {
+  padding: 0 75px;
+  padding-bottom: 35px;
+}
+}

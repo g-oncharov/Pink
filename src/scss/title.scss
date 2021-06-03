@@ -1,0 +1,41 @@
+.title {
+  min-height: 237px;
+  background-color: #263240;
+  background-image: url("../img/intro-bg.jpg");
+  background-size: auto;
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+    h2 {
+      display: block;
+      width: 75%;
+      margin: 0 auto;
+      padding-top: 95px;
+
+      text-align: center;
+      font-size: 24px;
+      font-weight: 300;
+      color: #ffffff;
+    }
+}
+
+@media(min-width: 660px) {
+  .title {
+    min-height: 440px;
+    background-image: url("../img/intro-bg-tablet.jpg");
+      h2 {
+        padding-top: 180px;
+        font-size: 50px;
+        line-height: 60px;
+      }
+  }
+}
+@media(min-width: 1200px) {
+  .title {
+    min-height: 394px;
+    width: 100%;
+    background-image: url("../img/intro-bg-back-desktop.jpg");
+      h2 {
+        padding-top: 173px;
+      }
+  }
+}

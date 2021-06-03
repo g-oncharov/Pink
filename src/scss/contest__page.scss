@@ -1,0 +1,16 @@
+@media(min-width: 660px) {
+.contest-page {
+    main {
+      display: flex;
+      flex-wrap:wrap;
+      flex-direction: column;
+    }
+}
+}
+@media(min-width:1200px) {
+  .contest-page {
+      main {
+        flex-direction: row;
+      }
+  }
+}

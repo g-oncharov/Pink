@@ -1,0 +1,28 @@
+.text-content {
+  margin: 43px 0;
+  b {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+  }
+}
+
+@media(min-width: 660px) {
+  .text-content {
+    width: 100%;
+    margin: 45px 0px 69px;
+    b {
+      font-size: 18px;
+    }
+  }
+}
+
+@media(min-width: 1200px) {
+  .text-content {
+    margin: 5px 0 66px;
+  }
+}

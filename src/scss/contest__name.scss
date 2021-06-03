@@ -1,0 +1,62 @@
+.name {
+  padding: 0 6.25%;
+  padding-bottom: 20px;
+
+  label {
+    display: block;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #d22856;
+    margin-bottom: 10px;
+  }
+
+  .input {
+    margin-bottom: 25px;
+  }
+}
+
+@media(min-width: 660px) {
+  .name {
+    padding: 0 3%;
+    order: 1;
+
+    label {
+      display: inline-block;
+      width: 14.5%;
+      margin: 0;
+    }
+
+    .input {
+      margin-top: 25px;
+      margin-bottom: 25px;
+      display: inline-block;
+      width: 84.8%;
+    }
+  }
+
+  .name__wrapper {
+    max-width: 936px;
+    margin: 0 auto;
+  }
+}
+@media(min-width: 1200px) {
+  .name {
+    padding: 0;
+    padding-top: 15px;
+    width: 457px;
+    margin-right: 38px;
+    margin-left: auto;
+    label {
+      width: 91px;
+    }
+
+    .input {
+      width: 339px;
+    }
+
+  }
+
+  .name__wrapper {
+    width: 435px;
+  }
+}
